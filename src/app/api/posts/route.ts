@@ -1,4 +1,3 @@
-# Blog API Route
 import { NextResponse } from 'next/server';
 
 const posts = [
