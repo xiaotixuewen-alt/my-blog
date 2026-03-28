@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '@/lib/data';
 
@@ -9,7 +10,6 @@ export async function generateStaticParams() {
 }
 
 export default function PostPage({ params }: { params: Promise<{ slug: string }> }) {
-  // Unwrap params in Next.js 15
   const { slug } = React.use(params);
   const post = getPostBySlug(slug);
 
@@ -63,6 +63,3 @@ export default function PostPage({ params }: { params: Promise<{ slug: string }>
     </article>
   );
 }
-
-// Import React for params unwrapping in Next.js 15
-import React from 'react';
